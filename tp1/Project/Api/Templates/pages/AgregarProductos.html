@@ -1,0 +1,35 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block cuerpo %}
+
+<div class="formularios">
+
+    <img src="{% static 'src/gryffindo_form.jfif' %}" alt="">
+
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        {{Formularios}}
+
+        <input type="submit" value="Registrar Producto" class="boton">
+
+        {% if Mensaje %}
+        <div class="alert alert-success" id="Alerta">
+            {{Mensaje}}
+        </div>
+        {% endif %}
+    </form>
+
+</div>
+
+<script>
+setTimeout(() => {
+    let alerta = document.getElementById("Alerta")
+    if(alerta){
+        alerta.style.display = "none"
+    }
+}, 2000)
+</script>
+
+{% endblock %}  

@@ -1,0 +1,20 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block cuerpo %}
+
+<div class="home">
+
+    <div class="overlay"></div>
+
+    <div class="contenido-home">
+        <h1>Gryffindor ⚡</h1>
+        <p>Bienvenido al mundo mágico</p>
+
+        <a href="{% url 'ver' %}" class="btn-home">Ver Productos</a>
+        <a href="{% url 'agregar' %}" class="btn-home secundario">Agregar Producto</a>
+    </div>
+
+</div>
+
+{% endblock %}

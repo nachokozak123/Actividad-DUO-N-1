@@ -1,0 +1,30 @@
+{% extends "Base.html" %}
+{% load static %}
+
+{% block cuerpo %}
+
+<div class="contenedor-productos">
+
+    {% for i in listaProductos %}
+    <div class="verprod">
+
+        <h1>{{i.Nombre}}</h1>
+        <h2>$ {{i.Precio}}</h2>
+        <h2>Cantidad: {{i.Cantidad}}</h2>
+        <h2>Categoría: {{i.Categoria}}</h2>
+        <h2>Fecha: {{i.Fecha|date:"d/m/Y"}}</h2>
+
+        <p>{{i.Descripcion}}</p>
+
+        {% if i.imagen %}
+            <img src="{{ i.imagen.url }}">
+        {% else %}
+            <p>Sin imagen</p>
+        {% endif %}
+
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}  

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda Gryffindor</title>
+
+    <link rel="stylesheet" href="{% static 'css/estiloharry.css' %}">
+</head>
+
+<body>
+
+<header class="encabezado">
+    <a href="{% url 'Inicio' %}">
+        <img src="{% static 'src/logo_Gryffindor.jpg' %}" class="logo">
+        <p>Gryffindor</p>
+    </a>
+
+    <nav class="menu">
+        <a href="{% url 'agregar' %}" class="activo">agregar producto</a>
+        <a href="{% url 'ver' %}">ver productos</a>
+    </nav>
+</header>
+
+<main>
+    {% block cuerpo %}
+    {% endblock %}
+</main>
+
+<footer>
+    <p>tienda gryffindor</p>
+</footer>
+
+</body>
+</html>
